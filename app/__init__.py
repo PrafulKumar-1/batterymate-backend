@@ -42,7 +42,17 @@ def create_app(config_name='development'):
     limiter.init_app(app)
     
     # Enable CORS
-    CORS(app, resources={r"/api/*": {"origins": "*"}})
+    CORS(app, resources={
+    r"/api/*": {
+        "origins": [
+            "https://your-netlify-url.netlify.app",
+            "http://localhost:3000"  # Keep for local development
+        ],
+        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"]
+    }
+})
+
 
     # 5. Initialize ML Service
     from app.services.ml_service import ml_service
