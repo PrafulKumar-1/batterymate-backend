@@ -45,7 +45,7 @@ def create_app(config_name='development'):
     CORS(app, resources={
     r"/api/*": {
         "origins": [
-            "https://your-netlify-url.netlify.app",
+            "https://batterymate.netlify.app",
             "http://localhost:3000"  # Keep for local development
         ],
         "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
