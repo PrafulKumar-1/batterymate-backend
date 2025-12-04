@@ -46,7 +46,8 @@ def create_app(config_name='development'):
     r"/api/*": {
         "origins": [
             "https://batterymate.netlify.app",
-            "http://localhost:3000"  # Keep for local development
+            "http://localhost:3000" ,
+             "http://localhost:5000" # Keep for local development
         ],
         "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
         "allow_headers": ["Content-Type", "Authorization"]
