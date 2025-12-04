@@ -2,7 +2,7 @@
 set -e
 
 echo "🌱 Running seeds.py to create demo user and data..."
-python seeds.py
+python seed.py
 
 echo "✅ Seeds completed! Starting Gunicorn..."
 gunicorn wsgi:app
