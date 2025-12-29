@@ -69,6 +69,7 @@ def create_app(config_name='development'):
     from app.routes.air_quality import air_quality_bp
     from app.routes.grid_carbon import grid_carbon_bp
     from app.routes.route_service import routes_bp
+    from app.routes.chatbot import chatbot_bp
     
     
     app.register_blueprint(routes_bp)
@@ -79,6 +80,7 @@ def create_app(config_name='development'):
     app.register_blueprint(charging_bp)
     app.register_blueprint(air_quality_bp)
     app.register_blueprint(grid_carbon_bp)
+    app.register_blueprint(chatbot_bp)
     
     # Register middleware
     from app.middleware.error_handler import register_error_handlers
